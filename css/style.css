@@ -28,7 +28,7 @@
 }
 .cards{
     background-color: #e3e3e3;
-    ;
+    padding: 40px;
 }
 .card{
     display: flex;
@@ -48,12 +48,60 @@
     ;
 }
 
-.card img{
+.card .img{
     display: inline-block;
-    height: auto;
+    height: 80px;
+    margin-bottom: 15px;
+    width: 80px;
 }
 .card ul{
     list-style-image:url(../images/tic.png);
+    text-align: left;
+}
+.present{
+    background-color: #e3e3e3;
+    text-align: center;
+}
+
+.block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-container{
+    position: relative;
+    width: 480px;
+    height: auto;
+}
+
+.outer{
+    width: 100%;
+}
+
+.inner{
+    position: absolute;
+    top:15px;
+    left: 15px;
+    width: 450px;
+    height: auto;
+}
+
+.digit{
+    width: 335px;
+    height: 190px;
+}
+
+.text{
+    width: 37%;
+    text-align: left;
+    font-size: 20px;
+}
+
+.text h4{
+    color: #2AA73E;
+    font-weight: 600;
+    font-size: 28px;
 }
 
 
@@ -116,7 +164,19 @@
     color: black;
     font-size: 18px;
 }
-.examples{
+
+/* .container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px;
+} */
+/* .calendar{
+
+} */
+
+
+
+/* .examples{
     display: flex;
     justify-content: center;
 }
@@ -125,11 +185,9 @@
     width: 100%;
     height: 700px;
     background-color: aquamarine;
-    
+     */
 
-    
-
-}
+/* }
 .calendars{
     width: 100%;
     height: 100%;
@@ -140,11 +198,7 @@
 }
 .photo_example#p_2{
     background-color: #2AA73E;
-    align-self: stretch;
-}
-.photo_example{
-    
-   
-}
+    align-self: stretch; 
+}*/
 
 
