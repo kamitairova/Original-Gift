@@ -67,13 +67,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .image-container{
     position: relative;
     width: 480px;
     height: auto;
+    text-align: left;
 }
 
 .outer{
@@ -90,7 +91,7 @@
 
 .digit{
     width: 335px;
-    height: 190px;
+    height: 120px;
 }
 
 .text{
@@ -105,6 +106,43 @@
     font-size: 28px;
 }
 
+.present-secondary{
+    background-color: #e3e3e3;
+    text-align: center;
+}
+
+.present-secondary .container-secondary{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.digit-secondary{
+    display: flex;
+    align-items: center;
+}
+.image-container-secondary{
+    position: relative;
+    width: 606px;
+    height: auto;
+    text-align: left;
+}
+.outer-sec{
+    width: 100%;
+}
+.inner-sec{
+    position: absolute;
+    top:12px;
+    left: 7px;
+    width: 583px;
+    height: auto;
+}
+
+.digit-secondary img{
+    width: 48px;
+    padding-right: 20px;
+}
 /* @media (max-width: 1415px) {
     .outer{
         width: 500px;
@@ -114,17 +152,23 @@
     }
 } */
 
-@media (max-width: 1415px){
+@media (max-width: 1400px){
     .outer{
         width:86%;
     }
     .inner{
         width: 79%;
-        left: 50px;
+        left: 14px;
         top: 14px;
     }
     .digit{
-        width: 270px;
+        width: 22%;
+    }
+    /* .digit img{ 
+        width: 80px;
+    } */
+    .present .text{
+        width: 48%;
     }
 }
 
@@ -139,16 +183,26 @@
     background-color: #e3e3e3;
 }
 
+.calendar_title h3{
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
 
 .flex_calendar_container{
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
+.flex_calendar_container .photo img{
+    height: 637px;
+    width: 550px;
+    margin: 0;
+}
 
-
-.text{
-    max-width: 800px;
+.flex_calendar_container .text{
+    width: 48%;
 }
 .highlighted {
     color: #2AA73E;
@@ -180,6 +234,7 @@
     padding-right: 0.5em; /* Расстояние от маркера до текста */
 }
 .lines_of_text li h4{
+    font-weight: 500;
     color: black;
     font-size: 18px;
 }
@@ -197,6 +252,7 @@
     list-style: none;
     justify-content: center;
     background-color: #e3e3e3;
+    margin: 0;
     
 }
 .item{
@@ -220,4 +276,99 @@
 }
 @media (max-width: 899px) {
     body { font-size: 0.7rem; }
+}
+.create{
+    padding-bottom: 200px ;
+    padding-top: 40px;
+    background-color: #e3e3e3;
+}
+.create .container{
+    margin-left: 225px;
+    margin-right: 205px;
+}
+
+.create h2{
+    text-align: center;
+}
+.create .list{
+    text-align: left;
+    width: 36%;
+    margin-left: 142px;
+}
+.create .steps{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.create .step{
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.step .image {
+    position: relative;
+    margin-right: 16px;
+    display: inline-block;
+}
+
+.step.image img{
+    display: block;
+}
+
+.step h5{
+    font-weight: 600;
+}
+.step .image .number{
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+
+.step .image .number p{
+    width: 13px;
+    height: 40px;
+}
+
+.create .options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.create .option{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 26%;
+    margin-top: 30px;
+    font-size: 20px;
+}
+.create .option h5{
+    font-weight: 600;
+    padding-top: 5px;
+
+}
+.create .option p{
+    color: #2AA73E;
+    font-weight: 500;
+}
+
+.create-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.btn button{
+    padding: 23px 100px;
+    background-color: #2AA73E;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 54px;
 }
