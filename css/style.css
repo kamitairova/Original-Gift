@@ -160,12 +160,14 @@
 .container_calend{
     background-color: #e3e3e3;
 }
-.container_calend .title_ex_ph_cal{
+.title_ex_ph_cal{
     text-align: center;
     padding-top: 44px;
     padding-bottom: 7.72px;
 }
-.grid{
+.container_calend .grid{
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -173,10 +175,36 @@
     background-color: #e3e3e3;
     
 }
+.container_2{
+    background-color: #e3e3e3;
+}
+.container_2 .grid{
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    background-color: #e3e3e3;
+}
+.text_block{
+    margin-left: 50px;
+}
+.text_block ol li{
+    font-size: 20px;
+    font-weight: bold;
+}
+.text_block ol li p{
+    font-size: 18px;
+    font-weight: normal;
+}
+
 .item{
     padding-left: 19.62px;
     padding-right: 19.62px;
     padding-bottom: 24.52px;
+}
+.text2{
+    list-style-image: url('../images/Rectangle.png');
 }
 
 
