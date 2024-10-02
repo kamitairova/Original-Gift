@@ -277,6 +277,45 @@
 @media (max-width: 899px) {
     body { font-size: 0.7rem; }
 }
+@media(max-width:1000px){
+    .flex_calendar_container .text{
+        width: 80%;
+    }
+}
+
+.container_2{
+    background-color: #e3e3e3;
+}
+.container_2 .grid{
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    background-color: #e3e3e3;
+}
+.text_block{
+    margin-left: 50px;
+}
+.text_block ol li{
+    font-size: 20px;
+    font-weight: bold;
+}
+.text_block ol li p{
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.item{
+    padding-left: 19.62px;
+    padding-right: 19.62px;
+    padding-bottom: 24.52px;
+}
+.text2{
+    list-style-image: url('../images/Rectangle.png');
+}
+
+
 .create{
     padding-bottom: 200px ;
     padding-top: 40px;
