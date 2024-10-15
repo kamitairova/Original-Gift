@@ -37,9 +37,9 @@
 
                                     <p>{{ card.title }}</p>
                                     <ul>
-                                        {% for ls in card.list %}
-                                            <li>{{ ls.row }}</li>
-                                        {% endfor %}
+{#                                        {% for ls in card.list %}#}
+                                        <li>{{ card.list }}</li>
+{#                                        {% endfor %}#}
                                     </ul>
                                     <p>{{ card.text }}</p>
                                     <p class="price">{{ card.cost }}</p>
