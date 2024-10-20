@@ -50,10 +50,16 @@
 
 .card .img{
     display: inline-block;
-    height: 80px;
+    max-height: 80px;
     margin-bottom: 15px;
-    width: 80px;
+    max-width: 80px;
 }
+.img img{
+    max-width: 100%;
+}
+
+body > main > section-one > div > div > div > div > div > div > img
+
 .card ul{
     list-style-image:url(../images/tic.png);
     text-align: left;

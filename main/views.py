@@ -1,14 +1,17 @@
 from django.shortcuts import render
 
-from main.models import Cards
+from main.models import Card, Setting, Example, Offer, Calendar, Review, Manual
 
 
 def index(request):
     context = {
-        'title_h1': 'ИЩИТЕ ЧТО ПОДАРИТЬ БЛИЗКОМУ ЧЕЛОВЕКУ?',
-        'title_h2': 'ПОМОЖЕМ ВАМ ВЫБРАТЬ ХОРОШИЙ, ОРИГИНАЛЬНЫЙ И НЕДОРОГОЙ ПОДАРОК!',
-        'is_promotion': True,
-        'cards': Cards.objects.all()
+        'settings': Setting.objects.first(),
+        'examples': Example.objects.all(),
+        'offers': Offer.objects.first(),
+        'calendars': Calendar.objects.all(),
+        'reviews': Review.objects.all(),
+        'manual': Manual.objects.first(),
+        'cards': Card.objects.all(),
         # 'cards': [
         #     {
         #         'image': '../../../static/images/Group.png',

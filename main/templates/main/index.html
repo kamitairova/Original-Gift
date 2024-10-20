@@ -14,142 +14,156 @@
 <body>
     <div class="head">
         <div class="title">
-            <h1>{{ title_h1 }}</h1>
-            <h2>
-                {% if is_promotion%}
-                    {{ title_h2 }}
-                {% endif %}
-            </h2>
+            <h1>{% if settings.title %}{{ settings.title }}{% endif %}</h1>
+            <h2>{% if settings.subtitle_1 %}{{ settings.subtitle_1 }}{% endif %} <br> {% if settings.subtitle_2 %}{{ settings.subtitle_2 }}{% endif %}</h2> 
 
         </div>
     </div>
     <main>
         <section-one>
-            <div class="cards">
-                <div class="container text-center"> 
-                    <h3>Что чаще всего дарят люди друг другу?</h3>
-                    <div class="row custom-container">
-
-                        {% for card in cards %}
-                            <div class="col-12 col-md-6 col-xl-3">
-                                <div class="card">
-                                    <div class="img"><img src="{{ card.image }}" alt=""></div>
-
-                                    <p>{{ card.title }}</p>
-                                    <ul>
-{#                                        {% for ls in card.list %}#}
-                                        <li>{{ card.list }}</li>
-{#                                        {% endfor %}#}
-                                    </ul>
-                                    <p>{{ card.text }}</p>
-                                    <p class="price">{{ card.cost }}</p>
+            {% if settings.is_active_cards %}
+                <div class="cards">
+                    <div class="container text-center">
+                        {% if settings.cards %}<h3>{{ settings.cards }}</h3>{% endif %}
+                        <div class="row custom-container">
+    
+                            {% for card in cards %}
+                                <div class="col-12 col-md-6 col-xl-3">
+                                    <div class="card">
+                                        <div class="img">
+                                            <img src="{{ card.image.url }}" alt="">
+                                        </div>
+    
+                                        <p>{{ card.title }}</p>
+                                        <ul>
+                                            {% if card.list_1 %}
+                                                <li>{{ card.list_1 }}</li>
+                                            {% endif %}
+                                            {% if card.list_2 %}
+                                                <li>{{ card.list_2 }}</li>
+                                            {% endif %}
+                                            {% if card.list_3 %}
+                                                <li>{{ card.list_3 }}</li>
+                                            {% endif %}
+                                        </ul>
+                                        <p>{{ card.text }}</p>
+                                        <p class="price">{{ card.cost }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        {% endfor %}
-
+                            {% endfor %}
+    
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% endif %}
         </section-one>
 
         <section-two>
-            <div class="present">
-                <div class="container">
-                    <h3>Какой должен быть идеальный подарок?</h3>
-                        <div class="block">
-                            <div class="pictures">
-                                <div class="image-container">
-                                    <img src="../../../static/images/TEXT.png" alt="" class="outer">
-                                    <img src="../../../static/images/image2.png" alt="" class="inner">
-                                </div>
-                            </div>
-                        
-                            <div class="digit"><img src="../../../static/images/1.png" alt=""></div>
-                            <div class="text">
-                                <h4>Оригинальным</h4>
-                                <p>Ваш подарок будет выделяться на фоне других, будет видно что вы старались, заранее готовились, потратили силы и время, несмотря на то, что сделать фотокалендарь довольно просто! </p>
-                            </div>
-                        </div>
-
-                        <div class="block">
-                        <div class="text">
-                            <h4>Оригинальным</h4>
-                            <p>Ваш подарок будет выделяться на фоне других, будет видно что вы старались, заранее готовились, потратили силы и время, несмотря на то, что сделать фотокалендарь довольно просто! </p>
-                        </div>
-
-                        <div class="digit"><img src="../../../static/images/2.png" alt=""></div>
-
-                        <div class="pictures"></div>
-                            <div class="image-container">
-                                <img src="../../../static/images/TEXT.png" alt="" class="outer">
-                                <img src="../../../static/images/image3.png" alt="" class="inner">
-                            </div>
-                            </div>
-                        
-
-                        <div class="block">
-                        <div class="pictures">
-                            <div class="image-container">
-                                <img src="../../../static/images/TEXT.png" alt="" class="outer">
-                                <img src="../../../static/images/image4.png" alt="" class="inner">
-                            </div>
-                        </div>
-                        
-                        <div class="digit"><img src="../../../static/images/3.png" alt=""></div>
-                        <div class="text">
-                            <h4>Оригинальным</h4>
-                            <p>Ваш подарок будет выделяться на фоне других, будет видно что вы старались, заранее готовились, потратили силы и время, несмотря на то, что сделать фотокалендарь довольно просто! </p>
-                        </div>
-                        </div>
-
-                        <div class="block">
-                        <div class="text">
-                            <h4>Оригинальным</h4>
-                            <p>Ваш подарок будет выделяться на фоне других, будет видно что вы старались, заранее готовились, потратили силы и время, несмотря на то, что сделать фотокалендарь довольно просто! </p>
-                        </div>
-
-                        <div class="digit"><img src="../../../static/images/4.png" alt=""></div>
-
-                        <div class="pictures"></div>
-                            <div class="image-container">
-                                <img src="../../../static/images/TEXT.png" alt="" class="outer">
-                                <img src="../../../static/images/image5.png" alt="" class="inner">
-                            </div>
-                            </div>
-                </div>
-            </div>
-            </div>
-            <!-- <div class="present_secondary">
-                <div class="container-secondary">
-                    <h3>Какой должен быть идеальный подарок?</h3>
-                    <div class="block-secondary">
-                        <div class="digit-secondary">
-                            <img src="./images/1.png" alt=""><h4>Оригинальным</h4>
-                        </div>
-                        <div class="image-container-secondary">
-                            <img src="images/TEXT.png" alt="" class="outer-sec">
-                            <img src="images/image2.png" alt="" class="inner-sec">
-                        </div>
-                        <p>Ваш подарок будет выделяться на фоне других, будет видно что вы старались, заранее готовились, потратили силы и время, несмотря на то, что сделать фотокалендарь довольно просто! </p>
+            {% if settings.is_active_examples %}
+                
+                <div class="present">
+                    <div class="container">
+                        {% if settings.examples %}<h3>{{ settings.examples }}</h3>{% endif %}
+                            {% for ex in examples %}
+                                {% if ex.is_active_1 %}
+                                    <div class="block">
+                                        <div class="pictures">
+                                            <div class="image-container">
+                                                <img src="../../../static/images/TEXT.png" alt="" class="outer">
+                                                <img src="{{ ex.image_1.url }}" alt="" class="inner">
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="digit"><img src="../../../static/images/1.png" alt=""></div>
+                                        <div class="text">
+                                            <h4>{{ ex.title_1 }}</h4>
+                                            <p>{{ ex.text_1 }}</p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if ex.is_active_2 %}
+                                    <div class="block">
+                                    <div class="text">
+                                        <h4>{{ ex.title_2 }}</h4>
+                                        <p>{{ ex.text_2 }}</p>
+                                    </div>
+            
+                                    <div class="digit"><img src="../../../static/images/2.png" alt=""></div>
+            
+                                    <div class="pictures"></div>
+                                        <div class="image-container">
+                                            <img src="../../../static/images/TEXT.png" alt="" class="outer">
+                                            <img src="{{ ex.image_2.url }}" alt="" class="inner">
+                                        </div>
+                                        </div>
+                                {% endif %}
+                            {% endfor %}
+                            
+    
+    {#                        <div class="block">#}
+    {#                        <div class="pictures">#}
+    {#                            <div class="image-container">#}
+    {#                                <img src="../../../static/images/TEXT.png" alt="" class="outer">#}
+    {#                                <img src="../../../static/images/image4.png" alt="" class="inner">#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                        #}
+    {#                        <div class="digit"><img src="../../../static/images/3.png" alt=""></div>#}
+    {#                        <div class="text">#}
+    {#                            <h4>Оригинальным</h4>#}
+    {#                            <p>Ваш подарок будет выделяться на фоне других, будет видно что вы старались, заранее готовились, потратили силы и время, несмотря на то, что сделать фотокалендарь довольно просто! </p>#}
+    {#                        </div>#}
+    {#                        </div>#}
+    {##}
+    {#                        <div class="block">#}
+    {#                        <div class="text">#}
+    {#                            <h4>Оригинальным</h4>#}
+    {#                            <p>Ваш подарок будет выделяться на фоне других, будет видно что вы старались, заранее готовились, потратили силы и время, несмотря на то, что сделать фотокалендарь довольно просто! </p>#}
+    {#                        </div>#}
+    {##}
+    {#                        <div class="digit"><img src="../../../static/images/4.png" alt=""></div>#}
+    {##}
+    {#                        <div class="pictures"></div>#}
+    {#                            <div class="image-container">#}
+    {#                                <img src="../../../static/images/TEXT.png" alt="" class="outer">#}
+    {#                                <img src="../../../static/images/image5.png" alt="" class="inner">#}
+    {#                            </div>#}
+    {#                            </div>#}
                     </div>
                 </div>
-            </div> -->
+                <!-- <div class="present_secondary">
+                    <div class="container-secondary">
+                        <h3>Какой должен быть идеальный подарок?</h3>
+                        <div class="block-secondary">
+                            <div class="digit-secondary">
+                                <img src="./images/1.png" alt=""><h4>Оригинальным</h4>
+                            </div>
+                            <div class="image-container-secondary">
+                                <img src="images/TEXT.png" alt="" class="outer-sec">
+                                <img src="images/image2.png" alt="" class="inner-sec">
+                            </div>
+                            <p>Ваш подарок будет выделяться на фоне других, будет видно что вы старались, заранее готовились, потратили силы и время, несмотря на то, что сделать фотокалендарь довольно просто! </p>
+                        </div>
+                    </div>
+                </div> -->
+            {% endif %}
         </section-two>
 
         <section-three>
+            {% if settings.is_active_offers %}
                 <div class="calendar">
                     <div class="calendar_title">
-                        <h3>Что мы предлагаем подарить близкому человеку?</h3>
+                        {% if settings.offers %}<h3>{{ settings.offers }}</h3>{% endif %}
                     </div>
                     
                     <div class="flex_calendar_container">
                         <div class="photo">
-                            <img src="../../../static/images/%5Bremoval.png" alt="photocalendar">
+                            {% if offers.image %}<img src="{{ offers.image.url }}" alt="photocalendar">{% endif %}
                         </div>
                         <div class="text">
                             <div class="text_head">
-                                <h3 class="head highlighted">Фотокалендарь</h3>
-                                <h3 class="under_head">с вашими фотографиями</h3>
+                                <h3 class="head highlighted">{{ offers.title }}</h3>
+                                <h3 class="under_head">{{ offers.subtitle }}</h3>
                             </div>
                             <div class="lines_of_text">
                                 <ul>
@@ -173,173 +187,109 @@
                         </div>
                     </div>    
                 </div>
+            {% endif %}
         </section-three>
 
         <section-four>
-
-            <div class="container_calend">
-                <h2 class="title_ex_ph_cal">примеры фотокалендарей</h2>
-                <ul class="grid">
-                    <li class="item">
-                        <div class="calendar1">
-                            <img src="../../../static/images/kalendar1.png" alt="">
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="calendar2">
-                            <img src="../../../static/images/kalendar1.png" alt="">
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="calendar3">
-                            <img src="../../../static/images/kalendar1.png" alt="">
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="calendar4">
-                            <img src="../../../static/images/kalendar1.png" alt="">
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="calendar5">
-                            <img src="../../../static/images/kalendar1.png" alt="">
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="calendar6">
-                            <img src="../../../static/images/kalendar1.png" alt="">
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="calendar7">
-                            <img src="../../../static/images/kalendar1.png" alt="">
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="calendar8">
-                            <img src="../../../static/images/kalendar1.png" alt="">
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="calendar9">
-                            <img src="../../../static/images/kalendar1.png" alt="">
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="calendar10">
-                            <img src="../../../static/images/kalendar1.png" alt="">
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="calendar11">
-                            <img src="../../../static/images/kalendar1.png" alt="">
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="calendar12">
-                            <img src="../../../static/images/kalendar1.png" alt="">
-                        </div>
-                    </li>
-                 
-                </ul>
-                
-            </div>
-            <div class="container_calend">
-                <h2 class="title_ex_ph_cal">Видеоотзывы заказчиков</h2>
-                <ul class="grid">
-                    <li class="item">
-                        <div class="calendar1">
-                            <img src="../../../static/images/image%201368.png" alt="">
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="calendar2">
-                            <img src="../../../static/images/image%201368.png" alt="">
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="calendar3">
-                            <img src="../../../static/images/image%201368.png" alt="">
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="calendar4">
-                            <img src="../../../static/images/image%201368.png" alt="">
-                        </div>
-                    </li>
-
-                </ul>
-                
-            </div>
-</section-four>
+            {% if settings.is_active_calendars %}
+                <div class="container_calend">
+                    {% if settings.calendars %}<h2 class="title_ex_ph_cal">{{ settings.calendars }}</h2>{% endif %}
+                    <ul class="grid">
+                        {% for cal in calendars %}
+                            <li class="item">
+                                <div class="calendar1">
+                                    <img src="{{ cal.calendar.url }}" alt="">
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    
+                </div>
+            {% endif %}
+            {% if settings.is_active_review %}
+                <div class="container_calend">
+                    <h2 class="title_ex_ph_cal">{{ settings.reviews }}</h2>
+                    <ul class="grid">
+                        {% for rew in reviews %}
+                            <li class="item">
+                                <div class="calendar1">
+                                    <img src="{{ rew.review }}" alt="">
+                                </div>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </section-four>
         
 
 
         <foot>
-            <div class="create">
-                <div class="conrainer">
-                    <h2>Как создать фотокалендарь?</h2>
-                    <div class="steps">
-                        <div class="example">
-                            <img src="../../../static/images/%5Bremoval%2017.png" alt="">
-                        </div>
-                        <div class="list">
-                            <div class="step">
-                                <div class="image">
-                                    <img src="../../../static/images/Rectangle.png" alt="">
-                                    <div class="number">
-                                        <p>1</p>
-                                    </div>
-                                </div>
-                                <h5>Перейдите на наш сайт</h5>
+            {% if settings.is_active_manual %}
+                <div class="create">
+                    <div class="conrainer">
+                        {% if settings.manual %}<h2>{{ settings.manual }}</h2>{% endif %}
+                        <div class="steps">
+                            <div class="example">
+                                <img src="{{ manual.calendar.url }}" alt="">
                             </div>
-                            <p>По кнопке ниже «Создать фотокалендарь» перейдите на сайт нашей полиграфии «Ювента» </p>
-                            <div class="step">
-                                <div class="image">
-                                    <img src="../../../static/images/Rectangle.png" alt="">
-                                    <div class="number">
-                                        <p>2</p>
+                            <div class="list">
+                                <div class="step">
+                                    <div class="image">
+                                        <img src="../../../static/images/Rectangle.png" alt="">
+                                        <div class="number">
+                                            <p>1</p>
+                                        </div>
                                     </div>
+                                    <h5>{{ manual.title_1 }}</h5>
                                 </div>
-                                <h5>Создайте фотокалендарь самостоятельно</h5>
-                            </div>
-                            <p>С помощью онлайн-конструктора, на нашем сайте, создайте свой уникальный фотокалендарь и отправьте его на печать</p>
-                            <div class="step">
-                                <div class="image">
-                                    <img src="../../../static/images/Rectangle.png" alt="">
-                                    <div class="number">
-                                        <p>3</p>
+                                <p>{{ manual.text_1 }}</p>
+                                <div class="step">
+                                    <div class="image">
+                                        <img src="../../../static/images/Rectangle.png" alt="">
+                                        <div class="number">
+                                            <p>2</p>
+                                        </div>
                                     </div>
+                                    <h5>{{ manual.title_2 }}</h5>
                                 </div>
-                                <h5>Получить готовый фотокалендарь</h5>
+                                <p>{{ manual.text_2 }}</p>
+                                <div class="step">
+                                    <div class="image">
+                                        <img src="../../../static/images/Rectangle.png" alt="">
+                                        <div class="number">
+                                            <p>3</p>
+                                        </div>
+                                    </div>
+                                    <h5>{{ manual.title_3 }}</h5>
+                                </div>
+                                <p>{{ manual.text_3 }}</p>
                             </div>
-                            <p>По готовности заберите свой готовый фотокалендарь в ближайшем пункте выдачи вашего города </p>
                         </div>
-                    </div>
-                    <div class="options">
-                        <div class="option">
-                            <img src="../../../static/images/cost.png" alt="">
-                            <h5>Стоимость фотокалендаря</h5>
-                            <p>1500 рублей</p>
+                        <div class="options">
+                            <div class="option">
+                                <img src="{{ manual.ico_1.url }}" alt="">
+                                <h5>{{ manual.name_1 }}</h5>
+                                <p>{{ manual.description_1 }}</p>
+                            </div>
+                            <div class="option">
+                                <img src="{{ manual.ico_2.url }}" alt="">
+                                <h5>{{ manual.name_2 }}</h5>
+                                <p>{{ manual.description_2 }}</p>
+                            </div>
+                            <div class="option">
+                                <img src="{{ manual.ico_3.url }}" alt="">
+                                <h5>{{ manual.name_3 }}</h5>
+                                <p>{{ manual.description_3 }}</p>
+                            </div>
                         </div>
-                        <div class="option">
-                            <img src="../../../static/images/deadline.png" alt="">
-                            <h5>Сроки изготовления</h5>
-                            <p>2 дня</p>
+                        <div class="create-btn">
+                            <img src="../../../static/images/pointer.png" alt="">
+                            <div class="btn"><button>Создать фотокалендарь</button></div>
+                            <img src="../../../static/images/pointer2.png" alt="">
                         </div>
-                        <div class="option">
-                            <img src="../../../static/images/place.png" alt="">
-                            <h5>Место получения</h5>
-                            <p>Доставка по всей России</p>
-                        </div>
-                    </div>
-                    <div class="create-btn">
-                        <img src="../../../static/images/pointer.png" alt="">
-                        <div class="btn"><button>Создать фотокалендарь</button></div>
-                        <img src="../../../static/images/pointer2.png" alt="">
                     </div>
                 </div>
-            </div>
+            {% endif %}
         </foot>
     </main>
 </body>
