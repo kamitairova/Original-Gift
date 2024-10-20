@@ -8,6 +8,7 @@
 
 ```bash
 git clone https://github.com/kamitairova/Original-gift.git
+cd Original-gift
 ```
 
 ### 2. Создайте виртуальное окружение
