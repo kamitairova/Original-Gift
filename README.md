@@ -49,7 +49,7 @@ pip install -r requirements.txt
 
 ```bash
 python manage.py migrate
-python manage.py loaddata main/fixtures/*.json
+python manage.py loaddata main/fixtures/db.json
 ```
 
 ### 6. Запустите сервер
