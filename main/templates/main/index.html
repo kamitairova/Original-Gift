@@ -206,14 +206,14 @@
                     
                 </div>
             {% endif %}
-            {% if settings.is_active_review %}
+            {% if settings.is_active_reviews %}
                 <div class="container_calend">
                     <h2 class="title_ex_ph_cal">{{ settings.reviews }}</h2>
                     <ul class="grid">
                         {% for rew in reviews %}
                             <li class="item">
                                 <div class="calendar1">
-                                    <img src="{{ rew.review }}" alt="">
+                                    <img src="{{ rew.review.url }}" alt="">
                                 </div>
                         {% endfor %}
                     </ul>
