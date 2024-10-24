@@ -46,11 +46,11 @@ class Setting(models.Model):
 
 class Card(models.Model):
     image = models.ImageField(upload_to='CardIco', blank=True, null=True, help_text="Выберите изображение для карточки")
-    title = models.CharField(max_length=32, unique=True, blank=True, null=True)
+    title = models.CharField(max_length=25, unique=True, blank=True, null=True)
     # list = models.ManyToManyField(Card_list, through='CardListRelationship')
-    list_1 = models.CharField(max_length=32, blank=True, null=True)
-    list_2 = models.CharField(max_length=32, blank=True, null=True)
-    list_3 = models.CharField(max_length=32, blank=True, null=True)
+    list_1 = models.CharField(max_length=20, blank=True, null=True)
+    list_2 = models.CharField(max_length=20, blank=True, null=True)
+    list_3 = models.CharField(max_length=20, blank=True, null=True)
     text = models.CharField(max_length=25, blank=True, null=True)
     cost = models.CharField(max_length=25, blank=True, null=True)
 
@@ -69,8 +69,8 @@ class Example(models.Model):
         ]
     )
     image_1 = models.ImageField(upload_to='Examples', blank=True, null=True)
-    title_1 = models.CharField(max_length=300, blank=True, null=True)
-    text_1 = models.TextField(max_length=300, blank=True, null=True)
+    title_1 = models.CharField(max_length=25, blank=True, null=True)
+    text_1 = models.TextField(max_length=250, blank=True, null=True)
 
     is_active_2 = models.BooleanField(default=False)
     number_2 = models.IntegerField(
@@ -82,8 +82,8 @@ class Example(models.Model):
         ]
     )
     image_2 = models.ImageField(upload_to='Examples', blank=True, null=True)
-    title_2 = models.CharField(max_length=300, blank=True, null=True)
-    text_2 = models.TextField(max_length=300, blank=True, null=True)
+    title_2 = models.CharField(max_length=25, blank=True, null=True)
+    text_2 = models.TextField(max_length=250, blank=True, null=True)
 
     def __str__(self):
         return f" примеры: {self.number_1}.{self.title_1} | {self.number_2}.{self.title_2}"
@@ -148,16 +148,16 @@ class Manual(models.Model):
     text_3 = models.CharField(max_length=200, blank=True, null=True)
 
     ico_1 = models.ImageField(upload_to='manual', blank=True, null=True)
-    name_1 = models.CharField(max_length=50, blank=True, null=True)
-    description_1 = models.CharField(max_length=500, blank=True, null=True)
+    name_1 = models.CharField(max_length=25, blank=True, null=True)
+    description_1 = models.CharField(max_length=20, blank=True, null=True)
 
     ico_2 = models.ImageField(upload_to='manual', blank=True, null=True)
-    name_2 = models.CharField(max_length=50, blank=True, null=True)
-    description_2 = models.CharField(max_length=500, blank=True, null=True)
+    name_2 = models.CharField(max_length=25, blank=True, null=True)
+    description_2 = models.CharField(max_length=20, blank=True, null=True)
 
     ico_3 = models.ImageField(upload_to='manual', blank=True, null=True)
-    name_3 = models.CharField(max_length=50, blank=True, null=True)
-    description_3 = models.CharField(max_length=500, blank=True, null=True)
+    name_3 = models.CharField(max_length=25, blank=True, null=True)
+    description_3 = models.CharField(max_length=20, blank=True, null=True)
 
 
 
