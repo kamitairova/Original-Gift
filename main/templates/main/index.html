@@ -73,22 +73,31 @@
                                                 <img src="{{ ex.image_1.url }}" alt="" class="inner">
                                             </div>
                                         </div>
-                                    
-                                        <div class="digit"><img src="../../../static/images/1.png" alt=""></div>
-                                        <div class="text">
-                                            <h4>{{ ex.title_1 }}</h4>
-                                            <p>{{ ex.text_1 }}</p>
+                                        <div class="order">
+                                            <div class="digit">
+                                                <h3>{{ex.number_1}}</h3>
+                                            </div>
+                                            <div class="text">
+                                                <h4 class="subtit">{{ ex.title_1 }}</h4>
+                                                <p class="paragraph">{{ ex.text_1 }}</p>
+                                            </div>
                                         </div>
+                                        
                                     </div>
                                 {% endif %}
                                 {% if ex.is_active_2 %}
                                     <div class="block">
-                                    <div class="text">
+                                        <div class="order">
+                                            <div class="text">
                                         <h4>{{ ex.title_2 }}</h4>
                                         <p>{{ ex.text_2 }}</p>
                                     </div>
             
-                                    <div class="digit"><img src="../../../static/images/2.png" alt=""></div>
+                                    <div class="digit">
+                                        <h3>{{ex.number_2}}</h3>
+                                    </div>
+                                        </div>
+                                    
             
                                     <div class="pictures"></div>
                                         <div class="image-container">
