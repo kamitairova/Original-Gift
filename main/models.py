@@ -148,16 +148,16 @@ class Manual(models.Model):
     text_3 = models.CharField(max_length=200, blank=True, null=True)
 
     ico_1 = models.ImageField(upload_to='manual', blank=True, null=True)
-    name_1 = models.CharField(max_length=25, blank=True, null=True)
-    description_1 = models.CharField(max_length=20, blank=True, null=True)
+    name_1 = models.CharField(max_length=30, blank=True, null=True)
+    description_1 = models.CharField(max_length=30, blank=True, null=True)
 
     ico_2 = models.ImageField(upload_to='manual', blank=True, null=True)
-    name_2 = models.CharField(max_length=25, blank=True, null=True)
-    description_2 = models.CharField(max_length=20, blank=True, null=True)
+    name_2 = models.CharField(max_length=30, blank=True, null=True)
+    description_2 = models.CharField(max_length=30, blank=True, null=True)
 
     ico_3 = models.ImageField(upload_to='manual', blank=True, null=True)
-    name_3 = models.CharField(max_length=25, blank=True, null=True)
-    description_3 = models.CharField(max_length=20, blank=True, null=True)
+    name_3 = models.CharField(max_length=30, blank=True, null=True)
+    description_3 = models.CharField(max_length=30, blank=True, null=True)
 
 
 
