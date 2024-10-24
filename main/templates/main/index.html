@@ -61,102 +61,58 @@
         </section-one>
 
         <section-two>
-            {% if settings.is_active_examples %}
+            {% if examples %}
+                {% if settings.is_active_examples %}
+                    
+                    <div class="present">
+                        <div class="container">
+                            {% if settings.examples %}<h3>{{ settings.examples }}</h3>{% endif %}
+                                {% for ex in examples %}
+                                    {% if ex.is_active_1 %}
+                                        <div class="block">
+                                            <div class="pictures">
+                                                <div class="image-container">
+                                                    <img src="../../../static/images/TEXT.png" alt="" class="outer">
+                                                    <img src="{{ ex.image_1.url }}" alt="" class="inner">
+                                                </div>
+                                            </div>
+                                            <div class="order">
+                                                <div class="digit">
+                                                    <h3>{{ex.number_1}}</h3>
+                                                </div>
+                                                <div class="text">
+                                                    <h4 class="subtit">{{ ex.title_1 }}</h4>
+                                                    <p class="paragraph">{{ ex.text_1 }}</p>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    {% endif %}
+                                    {% if ex.is_active_2 %}
+                                        <div class="block">
+                                            <div class="order">
+                                                <div class="text">
+                                            <h4>{{ ex.title_2 }}</h4>
+                                            <p>{{ ex.text_2 }}</p>
+                                        </div>
                 
-                <div class="present">
-                    <div class="container">
-                        {% if settings.examples %}<h3>{{ settings.examples }}</h3>{% endif %}
-                            {% for ex in examples %}
-                                {% if ex.is_active_1 %}
-                                    <div class="block">
-                                        <div class="pictures">
+                                        <div class="digit">
+                                            <h3>{{ex.number_2}}</h3>
+                                        </div>
+                                            </div>
+                                        
+                
+                                        <div class="pictures"></div>
                                             <div class="image-container">
                                                 <img src="../../../static/images/TEXT.png" alt="" class="outer">
-                                                <img src="{{ ex.image_1.url }}" alt="" class="inner">
+                                                <img src="{{ ex.image_2.url }}" alt="" class="inner">
                                             </div>
-                                        </div>
-                                        <div class="order">
-                                            <div class="digit">
-                                                <h3>{{ex.number_1}}</h3>
                                             </div>
-                                            <div class="text">
-                                                <h4 class="subtit">{{ ex.title_1 }}</h4>
-                                                <p class="paragraph">{{ ex.text_1 }}</p>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                {% endif %}
-                                {% if ex.is_active_2 %}
-                                    <div class="block">
-                                        <div class="order">
-                                            <div class="text">
-                                        <h4>{{ ex.title_2 }}</h4>
-                                        <p>{{ ex.text_2 }}</p>
-                                    </div>
-            
-                                    <div class="digit">
-                                        <h3>{{ex.number_2}}</h3>
-                                    </div>
-                                        </div>
-                                    
-            
-                                    <div class="pictures"></div>
-                                        <div class="image-container">
-                                            <img src="../../../static/images/TEXT.png" alt="" class="outer">
-                                            <img src="{{ ex.image_2.url }}" alt="" class="inner">
-                                        </div>
-                                        </div>
-                                {% endif %}
-                            {% endfor %}
-                            
-    
-    {#                        <div class="block">#}
-    {#                        <div class="pictures">#}
-    {#                            <div class="image-container">#}
-    {#                                <img src="../../../static/images/TEXT.png" alt="" class="outer">#}
-    {#                                <img src="../../../static/images/image4.png" alt="" class="inner">#}
-    {#                            </div>#}
-    {#                        </div>#}
-    {#                        #}
-    {#                        <div class="digit"><img src="../../../static/images/3.png" alt=""></div>#}
-    {#                        <div class="text">#}
-    {#                            <h4>Оригинальным</h4>#}
-    {#                            <p>Ваш подарок будет выделяться на фоне других, будет видно что вы старались, заранее готовились, потратили силы и время, несмотря на то, что сделать фотокалендарь довольно просто! </p>#}
-    {#                        </div>#}
-    {#                        </div>#}
-    {##}
-    {#                        <div class="block">#}
-    {#                        <div class="text">#}
-    {#                            <h4>Оригинальным</h4>#}
-    {#                            <p>Ваш подарок будет выделяться на фоне других, будет видно что вы старались, заранее готовились, потратили силы и время, несмотря на то, что сделать фотокалендарь довольно просто! </p>#}
-    {#                        </div>#}
-    {##}
-    {#                        <div class="digit"><img src="../../../static/images/4.png" alt=""></div>#}
-    {##}
-    {#                        <div class="pictures"></div>#}
-    {#                            <div class="image-container">#}
-    {#                                <img src="../../../static/images/TEXT.png" alt="" class="outer">#}
-    {#                                <img src="../../../static/images/image5.png" alt="" class="inner">#}
-    {#                            </div>#}
-    {#                            </div>#}
-                    </div>
-                </div>
-                <!-- <div class="present_secondary">
-                    <div class="container-secondary">
-                        <h3>Какой должен быть идеальный подарок?</h3>
-                        <div class="block-secondary">
-                            <div class="digit-secondary">
-                                <img src="./images/1.png" alt=""><h4>Оригинальным</h4>
-                            </div>
-                            <div class="image-container-secondary">
-                                <img src="images/TEXT.png" alt="" class="outer-sec">
-                                <img src="images/image2.png" alt="" class="inner-sec">
-                            </div>
-                            <p>Ваш подарок будет выделяться на фоне других, будет видно что вы старались, заранее готовились, потратили силы и время, несмотря на то, что сделать фотокалендарь довольно просто! </p>
+                                    {% endif %}
+                                {% endfor %}
                         </div>
                     </div>
-                </div> -->
+                {% endif %}
             {% endif %}
         </section-two>
 
