@@ -538,6 +538,7 @@ body{
 }
 .container_calend {
     text-align:center;
+    background-color: #e3e3e3;
     padding-bottom: 15px;
 }
 .grid{
